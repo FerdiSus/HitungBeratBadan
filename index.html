@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Nama</label>
+        <input type="text" id="nama">
+    </div>
+    <div>
+        <Label>Jenis Kelamin</Label>
+        <select id="jenis_kelamin">
+            <option value="">Pilih Opsi</option>
+            <option value="L">LAKI-LAKI</option>
+            <option value="P">Perempuan</option>
+        </select>
+    </div>
+    <div>
+        <label>Tinggi badan</label>
+        <input type="number" id="Tinggi_badan">
+    </div>
+    <div>
+        <button type="button" id="btnhitung">Hitung</button>
+    </div>
+    <div id="hasil"></div>
+
+    <script>
+       document.getElementById("btnhitung").addEventListener("click", function(){
+           let nama = document.getElementById("nama").value;
+           let jenisKelamin = document.getElementById("jenis_kelamin").value;
+           let tinggiBadan = document.getElementById("Tinggi_badan").value;
+           let hasil;
+
+           if(jenisKelamin == "L"){
+               hasil = (tinggiBadan - 100) - ((tinggiBadan - 100) * 10/100);
+           }
+           else{
+               hasil = (tinggiBadan - 100) - ((tinggiBadan - 100) * 15/100);
+           }
+           document.getElementById("hasil").innerHTML = "<h1>Berat Badan ideal Anda adallah " + hasil + "</h1>";
+       });
+    </script>
+</body>
+</html>
